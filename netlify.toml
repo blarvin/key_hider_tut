@@ -1,8 +1,10 @@
 # example netlify.toml
 [build]
+  # base = "."
   # command = "netlify build"
   functions = "netlify/functions"
-  publish = "/src"
+  # publish = "src/"
+  command = "echo 'default context'"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
