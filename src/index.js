@@ -5,7 +5,7 @@ navigator.geolocation.getCurrentPosition(position => {
     // const URL = "/.netlify/functions/fetch-weather?lat=${lat}&lon=${lon}"
 
     // use this in dev or deployed, with API_SECRET in the NFunction's environment... (use your function's url)
-    const URL = "https://keyhidertut.netlify.app/.netlify/functions/fetch-weather"
+    const URL = "https://keyhidertut.netlify.app/.netlify/functions/fetch-weather?lat=${lat}&lon=${lon}"
 
     fetch(URL)
         .then(res => {console.log(res.json())})
