@@ -13,6 +13,12 @@ const {lat, lon} = event.queryStringParameters
 
     return {
       statusCode: 200,
+
+      headers: {
+        /* Required for CORS support to work */
+        'Access-Control-Allow-Origin': '*'
+      },
+
       body: JSON.stringify(data)
     }
   }
