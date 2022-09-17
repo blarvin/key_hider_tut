@@ -8,16 +8,19 @@ const {lat, lon} = event.queryStringParameters
 
   const url = `http://api.weatherstack.com/current?access_key=${API_SECRET}&query=${lat},${lon}&forecast_days=4`
 
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
+  };
+
   try {
     const { data } = await axios.get(url)
 
     return {
       statusCode: 200,
 
-      headers: {
-        /* Required for CORS support to work */
-        'Access-Control-Allow-Origin': '*'
-      },
+      headers,
 
       body: JSON.stringify(data)
     }
